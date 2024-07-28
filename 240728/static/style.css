@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* 페이지 전체 스타일 */
+html, body {
+    margin: 0;    /* 기본 여백 제거 */
+    height: 100%; /* 전체 높이 설정 */
+    text-align: center; /* 수평 중앙 정렬 */
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+}
+
+#speechForm{
+    height: 100vh;
+    display: flex;
+    margin-top:20px;
+    justify-content: center;
+}
+.area {
+    display: flex;
+    flex-direction: column;
+}
+.area h1 {
+    margin-top: 50px;
+    font-size: 1.8rem;
+}
+.area ul {margin:0; padding:0;}
+.area ul>ol {
+    font-size: 14px;
+    text-align: left;
+    line-height: 1;
+    padding: 10px;
+}
+
+
+/* 아이콘 컨테이너 */
+.icon-container {
+    position: relative; /* 스피너가 아이콘 주변에 위치하도록 설정 */
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+}
+
+/* 둥근 스피커 아이콘 버튼 스타일 */
+.icon-button {
+    background-color: #db3469; /* 기본 배경색 */
+    color: white; /* 아이콘 색상 */
+    border: none; /* 기본 테두리 제거 */
+    border-radius: 50%; /* 둥근 버튼 */
+    width: 80px; /* 버튼 너비 */
+    height: 80px; /* 버튼 높이 */
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    justify-content: center; /* 수평 중앙 정렬 */
+    font-size: 24px; /* 아이콘 크기 */
+    cursor: pointer; /* 커서 변경 */
+    transition: background-color 0.3s, transform 0.2s; /* 배경색과 변형에 대한 트랜지션 효과 */
+}
+
+/* 버튼 호버 스타일 */
+.icon-button:hover {
+    background-color: #db3469; /* 호버 시 배경색 변경 */
+}
+
+/* 버튼 클릭 시 효과 */
+.icon-button:active {
+    transform: scale(0.98); /* 클릭 시 약간의 축소 효과 */
+}
+
+/* 로딩 스피너 스타일 */
+.spinner {
+    display: none;
+    position: fixed;
+    /*left: 50%;*/
+    /*top: 50%;*/ 
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #db3469;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

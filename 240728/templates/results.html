@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>결과</title>
+</head>
+<body>
+    <div class="area">
+        <h1>결과</h1>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% elif titles %}
+            <ul>
+                {% for title in titles %}
+                    <ol>{{ title }}</ol>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="/">다시 시도</a>
+    </div>
+</body>
+</html>
